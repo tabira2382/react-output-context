@@ -2,8 +2,8 @@
 
 **Reactアウトプットサンプル**
 
-以下アプリケーションを状態管理をcontext APIを使用した構成に変更
-https://github.com/tabira2382/react-custom-hook-todo
+以下アプリケーションの状態管理をcontext APIを使用した構成に変更
+  https://github.com/tabira2382/react-custom-hook-todo
 
 ## 目次
 - [環境構築](#環境構築)
