@@ -1,13 +1,13 @@
-// TodoTemplate/index.jsx
 import React, {useState} from 'react';
-import useTodos from '../../../hooks/useTodos';
-import { InputForm } from '../../atoms/inputForm'
-import {AddTodo} from '../../organisms/AddTodo'
-import {TodoList} from '../../organisms/TodoList'
+import { useTodos } from '../../../context/TodoContext'; // ContextからuseTodosをインポート
+
+import { InputForm } from '../../atoms/inputForm';
+import { AddTodo } from '../../organisms/AddTodo';
+import { TodoList } from '../../organisms/TodoList';
 import styles from "./styles.module.css";
 
 export const TodoTemplate = () => {
-  const { todos, addTodo, deleteTodo, searchTodos } = useTodos();
+  const { todos, addTodo, deleteTodo, searchTodos } = useTodos(); // ここでuseTodosを使用
   const [newTodoTitle, setNewTodoTitle] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -28,8 +28,6 @@ export const TodoTemplate = () => {
 
   const filteredTodoItems = searchQuery ? searchTodos(searchQuery) : todos;
 
-
-
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Todo List</h1>
@@ -46,9 +44,9 @@ export const TodoTemplate = () => {
       {/* 検索フォーム */}
       <section className={styles.common}>
         <InputForm
-        inputValue={searchQuery}
-        placeholder={"Search Todo"}
-        handleChangeValue={handleSearchChange}
+          inputValue={searchQuery}
+          placeholder={"Search Todo"}
+          handleChangeValue={handleSearchChange}
         />
       </section>
 
@@ -59,4 +57,3 @@ export const TodoTemplate = () => {
     </div>
   );
 };
-
